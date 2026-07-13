@@ -41,4 +41,19 @@ const loginUser = async (req, res) => {
   }
 };
 
-module.exports = { checkEmail, registerUser, loginUser };
+const logoutUser = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
+
+    if (!user || !user.matchPassword(password)) {
+      return res.status(401).json({ message: "Invalid credentials" });
+    }
+
+    res.json({ _id: user._id, email: user.email, password: user.password });
+  } catch (e) {
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
+module.exports = { checkEmail, registerUser, loginUser, logoutUser };
