@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediQueue — Doctor Appointment</title>
+
+    <!-- Google Fonts: Space Grotesk (headings), Inter (body/data) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN (play) - config inline, kono build step lagbe na -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+              body: ["Inter", "sans-serif"],
+            },
+            colors: {
+              base: "#0B1220",
+              surface: "#131C31",
+              surface2: "#1B2740",
+              accent: "#22D3B6",
+              accentDim: "#17A08D",
+              warn: "#F5A623",
+              danger: "#F0596B",
+              muted: "#8B95A7",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="dark bg-base text-slate-100 font-body">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
