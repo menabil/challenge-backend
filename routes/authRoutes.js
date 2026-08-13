@@ -3,6 +3,7 @@ const {
   checkEmail,
   registerUser,
   loginUser,
+  logoutUser,
 } = require("../controllers/authController");
 
 router.post("/check-email", checkEmail);
