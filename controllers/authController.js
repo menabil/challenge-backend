@@ -52,8 +52,8 @@ const logoutUser = async (req, res) => {
 
     res.json({ _id: user._id, email: user.email, password: user.password });
   } catch (e) {
-    // res.status(500).json({ message: "Server error" });
-    res.send("User Successfully delete");
+    res.status(500).json({ message: "Server error" });
+    // res.send("User Successfully delete");
   }
 };
 
